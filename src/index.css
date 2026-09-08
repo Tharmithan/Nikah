@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --gold-100: #F9F5EB;
+    --gold-200: #EAD9B8;
+    --gold-300: #D8BD80;
+    --gold-400: #C5A059;
+    --gold-500: #B38636;
+    --gold-600: #936B26;
+    --gold-foil: linear-gradient(135deg, #F4E2B9 0%, #D4AF37 35%, #AA7C11 70%, #F4E2B9 100%);
+    --gold-foil-text: linear-gradient(135deg, #ECC87A 0%, #C99E32 30%, #8A6412 60%, #DFC071 100%);
+    --emerald-900: #0A241C;
+    --emerald-800: #0F382C;
+    --emerald-700: #164E3D;
+    --emerald-600: #1E6B54;
+    --ivory-base: #FAF7F2;
+    --ivory-warm: #F4ECE1;
+    --charcoal: #1F2421;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--ivory-base);
+    color: var(--charcoal);
+    background-image: 
+      radial-gradient(circle at 100% 0%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 0% 100%, rgba(15, 56, 44, 0.04) 0%, transparent 40%);
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Scheherazade New', serif;
+  }
+
+  .font-cinzel {
+    font-family: 'Cinzel Decorative', serif;
+  }
+}
+
+/* Custom Utilities */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #AA7C11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-light {
+  background: linear-gradient(135deg, #FFF0D0 0%, #ECC87A 50%, #C5A059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-emerald-gradient {
+  background: linear-gradient(135deg, #0F382C 0%, #1E6B54 60%, #2A856A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #F4E2B9 0%, #D4AF37 40%, #B8860B 80%, #F4E2B9 100%);
+}
+
+.bg-gold-glass {
+  background: rgba(212, 175, 55, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.border-gold-subtle {
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.shadow-gold-glow {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25), 0 0 60px rgba(212, 175, 55, 0.1);
+}
+
+.shadow-gold-subtle {
+  box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.15);
+}
+
+.shadow-luxury {
+  box-shadow: 0 20px 40px -15px rgba(15, 56, 44, 0.08), 0 0 20px rgba(212, 175, 55, 0.06);
+}
+
+/* Islamic Arch Clip Paths */
+.clip-mughal-arch {
+  clip-path: polygon(
+    0% 100%, 0% 25%,
+    5% 20%, 15% 15%, 30% 8%, 45% 2%, 50% 0%, 55% 2%, 70% 8%, 85% 15%, 95% 20%, 100% 25%,
+    100% 100%
+  );
+}
+
+.clip-islamic-pointed-arch {
+  clip-path: polygon(
+    0% 100%, 0% 35%,
+    8% 28%, 20% 18%, 35% 8%, 50% 0%, 65% 8%, 80% 18%, 92% 28%, 100% 35%,
+    100% 100%
+  );
+}
+
+/* 3D Gate Specific Perspective & Animations */
+.perspective-1500 {
+  perspective: 1500px;
+  perspective-origin: 50% 50%;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.gate-door-left {
+  transform-origin: left center;
+  transition: transform 3.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.gate-door-right {
+  transform-origin: right center;
+  transition: transform 3.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.gate-door-left.open {
+  transform: rotateY(-88deg) translateZ(10px);
+}
+
+.gate-door-right.open {
+  transform: rotateY(88deg) translateZ(10px);
+}
+
+/* Geometric Moroccan/Islamic Background Pattern */
+.bg-islamic-pattern {
+  background-image: radial-gradient(rgba(212, 175, 55, 0.12) 1px, transparent 1px), radial-gradient(rgba(15, 56, 44, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+.bg-islamic-star-pattern {
+  background-color: #FAF7F2;
+  background-image: 
+    linear-gradient(30deg, #F3ECE1 12%, transparent 12.5%, transparent 87%, #F3ECE1 87.5%, #F3ECE1),
+    linear-gradient(150deg, #F3ECE1 12%, transparent 12.5%, transparent 87%, #F3ECE1 87.5%, #F3ECE1),
+    linear-gradient(30deg, #F3ECE1 12%, transparent 12.5%, transparent 87%, #F3ECE1 87.5%, #F3ECE1),
+    linear-gradient(150deg, #F3ECE1 12%, transparent 12.5%, transparent 87%, #F3ECE1 87.5%, #F3ECE1),
+    linear-gradient(60deg, #FAF7F2 25%, transparent 25.5%, transparent 75%, #FAF7F2 75%, #FAF7F2),
+    linear-gradient(60deg, #FAF7F2 25%, transparent 25.5%, transparent 75%, #FAF7F2 75%, #FAF7F2);
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+/* Shimmer Animation */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: goldShimmer 4s infinite linear;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 6s infinite ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #AA7C11;
+}
